@@ -48,13 +48,12 @@ This project is an advanced Attendance and Assignment Submission Platform design
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/yourusername/repo-name.git
-   cd repo-name
+   git clone https://github.com/tahaalotwala/EduManage.git
    ```
 
 2. **Access the site**:
 
-   > Open index.html in your browser.
+   > Open frontend/index.html in your browser.
 
 ---
 
