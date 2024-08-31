@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <section class="flex">
+        <a href="home.html" class="logo">EduManage</a>
+
+        <form action="search.html" method="post" class="search-form">
+          <input type="text" name="search_box" required placeholder="search courses..." maxlength="100" />
+          <button type="submit" class="fas fa-search"></button>
+        </form>
+
+        <div class="icons">
+          <div id="menu-btn" class="fas fa-bars"></div>
+          <div id="search-btn" class="fas fa-search"></div>
+          <div id="toggle-btn" class="fas fa-sun"></div>
+        </div>
+      </section>
+    </header>
+
+    <div class="side-bar">
+      <div id="close-btn">
+        <i class="fas fa-times"></i>
+      </div>
+
+      <div class="profile">
+        <h3 class="name">Aarya Gurav</h3>
+        <p class="role">Student | TE AI&DS | 33</p>
+        <a href="profile.html" class="btn">View Profile</a>
+      </div>
+
+      <nav class="navbar">
+        <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="analytics.html"><i class="fas fa-question"></i><span>Analytics</span></a>
+        <a href="ass.html"><i class="fas fa-graduation-cap"></i><span>Assignments</span></a>
+        <a href="courses.html"><i class="fas fa-chalkboard-user"></i><span>Courses</span></a>
+        <a href="calender.html"><i class="fa-solid fa-calendar-days"></i><span>Calender</span></a>
+        <a href="notif.html"><i class="fa-solid fa-bell"></i><span>Notifications</span></a>
+        <a href="forum.html"><i class="fa-solid fa-comments"></i><span>Forum</span></a>
+        <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a>
+      </nav>
+    </div>
+
+    <section class="home-grid">
+      <h1 class="heading">Calender & Schedule</h1>
+
+      <iframe
+        src="https://embed.styledcalendar.com/#eRgJVRZ8LC6BgaWGvysu"
+        title="Styled Calendar"
+        class="styled-calendar-container"
+        style="width: 100%; border: none"
+        data-cy="calendar-embed-iframe"
+      ></iframe>
+      <script async type="module" src="https://embed.styledcalendar.com/assets/parent-window.js"></script>
+    </section>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+    <script>
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (!user) window.location.href = "../index.html";
+      console.log(user);
+    </script>
+  </body>
+</html>

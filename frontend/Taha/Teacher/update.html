@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>update</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+   <style>
+      nav {
+          height: 40rem;
+          overflow: auto;
+      }
+  </style>
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="home.html" class="logo">EduMa.</a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="">
+         <h3 class="name">Aditi Surve</h3>
+         <p class="role">Bootstrap Mentor</p>
+         <a href="update.html" class="btn">View Profile</a>
+         <div class="flex-btn">
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">register</a>
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/pic-1.jpg" class="image" alt="">
+      <h3 class="name">Aditi Surve</h3>
+      <p class="role">Bootstrap Mentor</p>
+      <a href="profile.html" class="btn">View Profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="dashboard.html"><i class="fas fa-home"></i><span>Dashboard</span></a>
+      <a href="attendance.html"><i class="fas fa-calendar-check"></i><span>Attendance</span></a>
+      <a href="analytics.html"><i class="fas fa-question"></i><span>Analytics</span></a>
+      <a href="Classrooms.html"><i class="fas fa-chalkboard-teacher"></i><span>Classrooms</span></a>
+      <a href="Classes-Asgmt.html"><i class="fas fa-tasks"></i><span>Assignments</span></a>
+      <a href="forum.html"><i class="fa-solid fa-comments"></i><span>Forums</span></a>
+      <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a>
+    </nav>
+  </div>
+</div>
+
+<section class="form-container">
+
+   <form enctype="multipart/form-data">
+      <h3>Update Profile</h3>
+      <p>Update Name</p>
+      <input type="text" name="name" placeholder="Aditi Surve" maxlength="50" class="box">
+      <p>Update Email</p>
+      <input type="email" name="email" placeholder="surve@gmail.come" maxlength="50" class="box">
+      <p>Previous Password</p>
+      <input type="password" name="old_pass" placeholder="Enter your old password" maxlength="20" class="box">
+      <p>New Password</p>
+      <input type="password" name="new_pass" placeholder="Enter a new password" maxlength="20" class="box">
+      <p>confirm password</p>
+      <input type="password" name="c_pass" placeholder="Confirm your new password" maxlength="20" class="box">
+      <p>update pic</p>
+      <input type="file" accept="image/*" class="box">
+      <input type="submit" value="update profile" name="submit" class="btn">
+   </form>
+
+</section>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<script>
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (!user) window.location.href = "../index.html";
+  console.log(user);
+</script>
+   
+</body>
+</html>

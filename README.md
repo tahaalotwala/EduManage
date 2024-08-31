@@ -4,7 +4,7 @@
 
 ### Project Description
 
-This project is an advanced Attendance and Assignment Submission Platform designed to streamline and automate the processes of attendance tracking and assignment management in educational institutions. The platform aims to modernize these essential functions, offering real-time tracking, ease of access, and comprehensive analytics to improve educational management and student performance.
+This project is an advanced Attendance and Assignment Submission Platform designed to streamline and automate the processes of attendance tracking and assignment management in educational institutions. The platform aims to modernize these essential functions, offering comprehensive tracking, ease of access, and comprehensive analytics to improve educational management and student performance.
 
 ---
 
@@ -59,7 +59,7 @@ This project is an advanced Attendance and Assignment Submission Platform design
 
 ### Technologies Used
 
-- **Frontend**: React.js, HTML5, CSS3
+- **Frontend**: HTML5, CSS3
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 
@@ -67,7 +67,7 @@ This project is an advanced Attendance and Assignment Submission Platform design
 
 ### Contributors
 
-- **Aarya Gurav**
+- **Aarya Rajendra Gurav**
 - **Alisha Inamdar**
 - **Saylee Shirke**
 - **Taha Alotwala**
