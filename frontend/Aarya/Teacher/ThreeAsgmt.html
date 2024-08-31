@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>watch</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      nav {
+          height: 40rem;
+          overflow: auto;
+      }
+  </style>
+  </head>
+  <body>
+    <header class="header">
+      <section class="flex">
+        <a href="home.html" class="logo">EduMa.</a>
+
+        <form action="search.html" method="post" class="search-form">
+          <input type="text" name="search_box" required placeholder="search student..." maxlength="100" />
+          <button type="submit" class="fas fa-search"></button>
+        </form>
+
+        <div class="icons">
+          <div id="menu-btn" class="fas fa-bars"></div>
+          <div id="search-btn" class="fas fa-search"></div>
+          <div id="user-btn" class="fas fa-user"></div>
+          <div id="toggle-btn" class="fas fa-sun"></div>
+        </div>
+
+        <div class="profile">
+          <img src="images/pic-1.jpg" class="image" alt="" />
+          <h3 class="name">Aditi Surve</h3>
+          <p class="role">Bootstrap Mentor</p>
+          <a href="profile.html" class="btn">view profile</a>
+          <div class="flex-btn">
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">register</a>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <div class="side-bar">
+      <div id="close-btn">
+        <i class="fas fa-times"></i>
+      </div>
+
+      <div class="profile">
+        <img src="images/pic-1.jpg" class="image" alt="" />
+        <h3 class="name">Aditi Surve</h3>
+        <p class="role">Bootstrap Mentor</p>
+        <a href="profile.html" class="btn">View Profile</a>
+      </div>
+
+      <nav class="navbar">
+        <a href="dashboard.html"><i class="fas fa-home"></i><span>Dashboard</span></a>
+        <a href="attendance.html"><i class="fas fa-calendar-check"></i><span>Attendance</span></a>
+        <a href="analytics.html"><i class="fas fa-question"></i><span>Analytics</span></a>
+        <a href="Classrooms.html"><i class="fas fa-chalkboard-teacher"></i><span>Classrooms</span></a>
+        <a href="Classes-Asgmt.html"><i class="fas fa-tasks"></i><span>Assignments</span></a>
+        <a href="forum.html"><i class="fa-solid fa-comments"></i><span>Forums</span></a>
+        <a href="logout.html"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a>
+      </nav>
+    </div>
+
+    <section class="watch-video">
+      <div class="video-container">
+        <h3 class="title">Assingment 3 - Create a Landing Page for a Startup</h3>
+        <div class="info">
+          <p class="date"><i class="fas fa-calendar"></i><span>20-06-2024</span></p>
+          <p class="date flex"><img src="./images/submit-icon.png" class="h-8" alt="" /><span>5 submissions</span></p>
+        </div>
+        <p class="description">
+            Design a compelling landing page for a startup that effectively communicates its mission, services, and value proposition. 
+            The page should be visually appealing, user-friendly, and optimized for conversions.
+        </p>
+      </div>
+    </section>
+
+    <section class="comments">
+      <h1 class="heading">5 Submissions</h1>
+
+      <div class="box-container">
+        <div class="box">
+          <div class="user">
+            <img src="images/pic-1.jpg" alt="" />
+            <div>
+              <h3>Aarya Gurav</h3>
+              <span>21-06-2024</span>
+            </div>
+          </div>
+          <form action="" class="flex-btn">
+            <input type="submit" value="Grade Assignment" name="edit_comment" class="inline-option-btn" />
+            <input type="submit" value="Return" name="delete_comment" class="inline-delete-btn" />
+          </form>
+        </div>
+
+        <div class="box">
+          <div class="user">
+            <img src="images/pic-2.jpg" alt="" />
+            <div>
+              <h3>Gashmir Mahajani</h3>
+              <span>21-06-2024</span>
+            </div>
+          </div>
+          <form action="" class="flex-btn">
+            <input type="submit" value="Grade Assignment" name="edit_comment" class="inline-option-btn" />
+            <input type="submit" value="Return" name="delete_comment" class="inline-delete-btn" />
+          </form>
+        </div>
+
+        <div class="box">
+          <div class="user">
+            <img src="images/pic-3.jpg" alt="" />
+            <div>
+              <h3>Radhika Apte</h3>
+              <span>22-06-2024</span>
+            </div>
+          </div>
+          <form action="" class="flex-btn">
+            <input type="submit" value="Grade Assignment" name="edit_comment" class="inline-option-btn" />
+            <input type="submit" value="Return" name="delete_comment" class="inline-delete-btn" />
+          </form>
+        </div>
+
+        <div class="box">
+          <div class="user">
+            <img src="images/pic-4.jpg" alt="" />
+            <div>
+              <h3>Tina Mathur</h3>
+              <span>24-06-2024</span>
+            </div>
+          </div>
+          <form action="" class="flex-btn">
+            <input type="submit" value="Grade Assignment" name="edit_comment" class="inline-option-btn" />
+            <input type="submit" value="Return" name="delete_comment" class="inline-delete-btn" />
+          </form>
+        </div>
+
+        <div class="box">
+          <div class="user">
+            <img src="images/pic-5.jpg" alt="" />
+            <div>
+              <h3>Jai Singh</h3>
+              <span>24-10-2024</span>
+            </div>
+          </div>
+          <form action="" class="flex-btn">
+            <input type="submit" value="Grade Assignment" name="edit_comment" class="inline-option-btn" />
+            <input type="submit" value="Return" name="delete_comment" class="inline-delete-btn" />
+          </form>
+        </div>
+
+        <div class="box">
+          <div class="user">
+            <img src="images/pic-2.jpg" alt="" />
+            <div>
+              <h3>john deo</h3>
+              <span>22-10-2022</span>
+            </div>
+          </div>
+          <form action="" class="flex-btn">
+            <input type="submit" value="Grade Assignment" name="edit_comment" class="inline-option-btn" />
+            <input type="submit" value="Return" name="delete_comment" class="inline-delete-btn" />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+</html>
