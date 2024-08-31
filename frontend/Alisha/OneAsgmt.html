@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>assignment</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <section class="flex">
+        <a href="home.html" class="logo">EduMa.</a>
+
+        <form action="search.html" method="post" class="search-form">
+          <input type="text" name="search_box" required placeholder="search courses..." maxlength="100" />
+          <button type="submit" class="fas fa-search"></button>
+        </form>
+
+        <div class="icons">
+          <div id="menu-btn" class="fas fa-bars"></div>
+          <div id="search-btn" class="fas fa-search"></div>
+          <div id="user-btn" class="fas fa-user"></div>
+          <div id="toggle-btn" class="fas fa-sun"></div>
+        </div>
+      </section>
+    </header>
+
+    <div class="side-bar">
+      <div id="close-btn">
+        <i class="fas fa-times"></i>
+      </div>
+
+      <div class="profile">
+        <h3 class="name">Aarya Gurav</h3>
+        <p class="role">Student | TE AI&DS | 33</p>
+        <a href="profile.html" class="btn">View Profile</a>
+      </div>
+
+      <nav class="navbar">
+        <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="analytics.html"><i class="fas fa-question"></i><span>Analytics</span></a>
+        <a href="ass.html"><i class="fas fa-graduation-cap"></i><span>Assignments</span></a>
+        <a href="courses.html"><i class="fas fa-chalkboard-user"></i><span>Courses</span></a>
+        <a href="calender.html"><i class="fa-solid fa-calendar-days"></i><span>Calender</span></a>
+        <a href="notif.html"><i class="fa-solid fa-bell"></i><span>Notifications</span></a>
+        <a href="forum.html"><i class="fa-solid fa-comments"></i><span>Forum</span></a>
+        <a href="logout.html"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a>
+      </nav>
+    </div>
+
+    <section class="watch-video">
+      <div class="video-container">
+        <h3 class="title">Assignment 1 - Build a Personal Portfolio Webpage</h3>
+        <div class="info">
+          <p class="date"><i class="fas fa-calendar"></i><span>20-06-2024</span></p>
+          <p class="date flex"><span>Ungraded</span></p>
+        </div>
+        <p class="description">
+          Create a responsive webpage to showcase your skills, projects, and achievements, featuring sections like About
+          Me, Projects, Skills, and Contact Information. The goal is to establish a professional online presence.
+        </p>
+
+        <form
+          id="uploadForm"
+          action="/upload"
+          method="post"
+          enctype="multipart/form-data"
+          onsubmit="showConfetti(event)"
+        >
+          <!-- File Upload Input -->
+          <input type="file" id="file-upload" required />
+
+          <!-- Submit Button -->
+          <a class="btn" onclick="showConfetti(event)">Submit</a>
+        </form>
+      </div>
+    </section>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+    <script>
+      function showConfetti(event) {
+        event.preventDefault(); // Prevent the default link navigation
+
+        // Confetti effect using canvas-confetti library
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
+
+        // Optional: Redirect to the profile page after showing confetti
+        setTimeout(() => {
+          window.location.href = "ass.html";
+        }, 500);
+      }
+    </script>
+  </body>
+</html>
