@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Date-picker</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+ 
+   <style>
+      .date-picker-container {
+         background-color: #8e44ad;
+         padding: 3rem;
+         text-align: center;
+         font-size: 2rem;
+      }
+
+      .date-picker-container input {
+         font-size: 2rem;
+      }
+
+      /*  */
+
+
+      .attendance-profile .subjects-container {
+         margin-top: 20px;
+      }
+
+      .attendance-profile .subject-box {
+         padding: 20px;
+         border: 1px solid #ddd;
+         border-radius: 10px;
+         margin-bottom: 15px;
+         background-color: #f9f9f9;
+         box-shadow: 0 4px 8px rgba(241, 240, 240, 0.1);
+      }
+
+
+      .attendance-profile .subject-box h2,
+      h3 {
+         margin: 0;
+         margin-bottom: 10px;
+         font-size: 30px;
+         color: #333;
+
+      }
+
+      .attendance-profile .view-subject-btn {
+         display: inline-block;
+         padding: 10px 20px;
+         background-color: #007bff;
+         color: #fff;
+         text-decoration: none;
+         border-radius: 5px;
+         font-size: 12px;
+         transition: background-color 0.3s;
+      }
+
+      .attendance-profile .view-subject-btn:hover {
+         background-color: #0056b3;
+      }
+
+
+
+      .attendance-profile .student-item {
+         padding: 15px;
+         border: 1px solid #ddd;
+         border-radius: 5px;
+         margin-bottom: 10px;
+         background-color: #f9f9f9;
+      }
+
+      .attendance-profile .student-item span {
+         display: block;
+         margin-bottom: 10px;
+         font-size: 1.2em;
+      }
+
+      .attendance-profile .student-item label {
+         display: block;
+         margin-bottom: 5px;
+      }
+
+      .attendance-profile .student-item label .btn {
+         padding: 10px 20px;
+         background-color: #007bff;
+         color: #fff;
+         text-decoration: none;
+         border-radius: 5px;
+         font-size: 1em;
+         cursor: pointer;
+         display: inline-block;
+         margin-top: 20px;
+      }
+
+      .attendance-profile .student-item label .btn:hover {
+         background-color: #0056b3;
+      }
+
+      
+      nav {
+          height: 40rem;
+          overflow: auto;
+      }
+  
+   </style>
+
+</head>
+
+<body>
+
+   <header class="header">
+
+      <section class="flex">
+
+         <a href="home.html" class="logo">EduManage</a>
+
+         <form action="search.html" method="post" class="search-form">
+            <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+            <button type="submit" class="fas fa-search"></button>
+         </form>
+
+         <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+            <div id="user-btn" class="fas fa-user"></div>
+            <div id="toggle-btn" class="fas fa-sun"></div>
+         </div>
+
+         <div class="profile">
+            <img src="images/pic-1.jpg" class="image" alt="">
+            <h3 class="name">Aditi Surve</h3>
+            <p class="role">Bootstrap Mentor</p>
+            <a href="profile.html" class="btn">View Profile</a>
+            <div class="flex-btn">
+               <a href="login.html" class="option-btn">login</a>
+               <a href="register.html" class="option-btn">register</a>
+            </div>
+         </div>
+
+      </section>
+
+   </header>
+
+   <div class="side-bar">
+
+      <div id="close-btn">
+         <i class="fas fa-times"></i>
+      </div>
+
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="">
+         <h3 class="name">Aditi Surve</h3>
+         <p class="role">Bootstrap Mentor</p>
+         <a href="profile.html" class="btn">View Profile</a>
+      </div>
+      <nav class="navbar">
+         <a href="dashboard.html"><i class="fas fa-home"></i><span>Dashboard</span></a>
+         <a href="attendance.html"><i class="fas fa-calendar-check"></i><span>Attendance</span></a>
+         <a href="analytics.html"><i class="fas fa-question"></i><span>Analytics</span></a>
+         <a href="Classrooms.html"><i class="fas fa-chalkboard-teacher"></i><span>Classrooms</span></a>
+         <a href="Classes-Asgmt.html"><i class="fas fa-tasks"></i><span>Assignments</span></a>
+         <a href="forum.html"><i class="fa-solid fa-comments"></i><span>Forums</span></a>
+         <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a>
+        </nav>
+   
+   </div>
+
+   <section class="attendance-profile">
+
+      <h1 class="heading">Date-Picker</h1>
+      <div class="date-picker-container">
+         <label for="date-picker">Select a date:</label>
+         <input type="date" id="date-picker" name="date-picker">
+      </div>
+
+      <div id="subjects-container" class="subjects-container" style="display: none;">
+         <h2>Available Subjects</h2>
+         <div class="subject-box">
+            <h3>HTML</h3>
+            <a href="subj1.html" class="view-subject-btn">View Subject</a>
+         </div>
+         <div class="subject-box">
+            <h3>CSS</h3>
+            <a href="subj2.html" class="view-subject-btn">View Subject</a>
+         </div>
+
+
+         <!-- New section for student list and attendance marking -->
+         <div id="attendance-container" class="attendance-container" style="display: none;">
+            <h2>Mark Attendance</h2>
+            <div id="student-list">
+               <!-- Student list will be populated here -->
+            </div>
+            <button id="save-attendance" class="btn">Save Attendance</button>
+         </div>
+
+   </section>
+
+
+   <!-- custom js file link  -->
+   <script src="js/script.js"></script>
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         const datePicker = document.getElementById('date-picker');
+         const subjectsContainer = document.getElementById('subjects-container');
+
+         datePicker.addEventListener('change', function () {
+            if (datePicker.value) {
+               // Display the subjects container when a date is selected
+               subjectsContainer.style.display = 'block';
+            } else {
+               // Hide the subjects container if no date is selected
+               subjectsContainer.style.display = 'none';
+            }
+         });
+      });
+   </script>
+
+<script>
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (!user) window.location.href = "../index.html";
+  console.log(user);
+</script>
+</body>
+
+</html>

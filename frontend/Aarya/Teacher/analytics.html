@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Include Chart.js Data Labels Plugin from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <style>
+      nav {
+        height: 40rem;
+        overflow: auto;
+      }
+    </style>
+    <style>
+      .chart-container {
+        width: 80%;
+        max-width: 600px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <section class="flex">
+        <a href="home.html" class="logo">EduManage</a>
+
+        <form action="search.html" method="post" class="search-form">
+          <input type="text" name="search_box" required placeholder="search..." maxlength="100" />
+          <button type="submit" class="fas fa-search"></button>
+        </form>
+
+        <div class="icons">
+          <div id="menu-btn" class="fas fa-bars"></div>
+          <div id="search-btn" class="fas fa-search"></div>
+          <div id="user-btn" class="fas fa-user"></div>
+          <div id="toggle-btn" class="fas fa-sun"></div>
+        </div>
+
+        <div class="profile">
+          <img src="images/pic-1.jpg" class="image" alt="" />
+          <h3 class="name">Aditi Surve</h3>
+          <p class="role">Bootstrap Mentor</p>
+          <a href="profile.html" class="btn">View Profile</a>
+          <div class="flex-btn">
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">register</a>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <div class="side-bar">
+      <div id="close-btn">
+        <i class="fas fa-times"></i>
+      </div>
+
+      <div class="profile">
+        <img src="images/pic-1.jpg" class="image" alt="" />
+        <h3 class="name">Aditi Surve</h3>
+        <p class="role">Bootstrap Mentor</p>
+        <a href="profile.html" class="btn">View Profile</a>
+      </div>
+      <nav class="navbar">
+        <a href="dashboard.html"><i class="fas fa-home"></i><span>Dashboard</span></a>
+        <a href="attendance.html"><i class="fas fa-calendar-check"></i><span>Attendance</span></a>
+        <a href="analytics.html"><i class="fas fa-question"></i><span>Analytics</span></a>
+        <a href="Classrooms.html"><i class="fas fa-chalkboard-teacher"></i><span>Classrooms</span></a>
+        <a href="Classes-Asgmt.html"><i class="fas fa-tasks"></i><span>Assignments</span></a>
+        <a href="forum.html"><i class="fa-solid fa-comments"></i><span>Forums</span></a>
+        <a href="logout.html"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a>
+      </nav>
+    </div>
+
+    <section class="teachers">
+      <h1 class="heading">Analytics</h1>
+
+      <div class="chart-container">
+        <canvas id="workChart"></canvas>
+        <br />
+        <br />
+        <canvas id="workBarChart"></canvas>
+      </div>
+    </section>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+    <script>
+      // Wait until the DOM is fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the canvas element for the chart
+        const ctx = document.getElementById("workChart").getContext("2d");
+
+        // Data for the donut chart
+        const data = {
+          labels: ["Lab Teaching Hours", "Theory Lecture Hours", "Clerk Work Hours"],
+          datasets: [
+            {
+              label: "Work Hours Distribution",
+              data: [15, 10, 5], // Example data for lab, theory, and clerk hours
+              backgroundColor: ["rgba(75, 192, 192, 0.6)", "rgba(255, 99, 132, 0.6)", "rgba(255, 206, 86, 0.6)"],
+              borderColor: ["rgba(75, 192, 192, 1)", "rgba(255, 99, 132, 1)", "rgba(255, 206, 86, 1)"],
+              borderWidth: 1,
+            },
+          ],
+        };
+
+        // Configuration options for the donut chart
+        const config = {
+          type: "doughnut",
+          data: data,
+          options: {
+            plugins: {
+              legend: {
+                display: true,
+                position: "top",
+              },
+              datalabels: {
+                color: "#fff",
+                font: {
+                  weight: "bold",
+                },
+                formatter: (value, ctx) => {
+                  let total = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                  let percentage = ((value / total) * 100).toFixed(1);
+                  return `${value} hrs\n(${percentage}%)`; // Display both value and percentage
+                },
+              },
+            },
+          },
+        };
+
+        // Create the donut chart with data labels plugin
+        new Chart(ctx, config);
+
+        const workChartContext = document.getElementById("workBarChart").getContext("2d");
+
+        // Data for the bar chart
+        const workChartData = {
+          labels: ["Lab Teaching Hours", "Theory Lecture Hours", "Clerk Work Hours"],
+          datasets: [
+            {
+              label: "Work Hours",
+              data: [15, 10, 5], // Example data for lab, theory, and clerk hours
+              backgroundColor: ["rgba(75, 192, 192, 0.6)", "rgba(255, 99, 132, 0.6)", "rgba(255, 206, 86, 0.6)"],
+              borderColor: ["rgba(75, 192, 192, 1)", "rgba(255, 99, 132, 1)", "rgba(255, 206, 86, 1)"],
+              borderWidth: 1,
+            },
+          ],
+        };
+
+        // Configuration options for the bar chart
+        const workChartConfig = {
+          type: "bar",
+          data: workChartData,
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: "Hours Worked",
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                display: true,
+                position: "top",
+              },
+              datalabels: {
+                color: "#000",
+                anchor: "end",
+                align: "top",
+                font: {
+                  weight: "bold",
+                },
+                formatter: (value, chartContext) => {
+                  let totalHours = chartContext.chart.data.datasets[0].data.reduce(
+                    (accumulated, current) => accumulated + current,
+                    0
+                  );
+                  let percentage = ((value / totalHours) * 100).toFixed(1);
+                  return `${value} hrs (${percentage}%)`; // Display both value and percentage
+                },
+              },
+            },
+          },
+          plugins: [ChartDataLabels],
+        };
+
+        // Create the bar chart with data labels plugin
+        new Chart(workChartContext, workChartConfig);
+      });
+    </script>
+  </body>
+</html>
